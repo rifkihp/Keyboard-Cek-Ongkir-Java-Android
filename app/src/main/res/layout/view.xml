@@ -1,0 +1,239 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+	android:background="@color/grey_light">
+
+	<View
+		android:id="@+id/listatas"
+		android:layout_width="match_parent"
+		android:layout_height="2dp"
+		android:background="@color/colorButton" />
+
+	<LinearLayout
+		android:id="@+id/linearmenu"
+		android:layout_below="@+id/listatas"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:background="@color/white">
+
+		<LinearLayout
+			android:id="@+id/linearmenu_cekongkir"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:orientation="vertical"
+			android:paddingLeft="@dimen/_5sdp"
+			android:paddingRight="@dimen/_5sdp"
+			android:paddingBottom="@dimen/_3sdp" >
+
+			<ImageView
+				android:layout_gravity="center_horizontal"
+				android:layout_width="@dimen/_42sdp"
+				android:layout_height="@dimen/_24sdp"
+				android:paddingBottom="@dimen/_3sdp"
+				android:src="@drawable/menu_ongkos_kirim" />
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:text="CEK ONGKIR"
+				android:textSize="@dimen/_9sdp"
+				android:layout_gravity="center_horizontal"
+				android:textColor="@color/colorEditTextFont"/>
+		</LinearLayout>
+
+		<View
+			android:layout_width="@dimen/_1sdp"
+			android:layout_height="match_parent"
+			android:background="@color/grey_light" />
+
+		<androidx.recyclerview.widget.RecyclerView
+			android:id="@+id/recyclerView"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="match_parent" />
+
+	</LinearLayout>
+
+	<View
+		android:layout_below="@+id/linearmenu"
+		android:layout_width="match_parent"
+		android:layout_height="1dp"
+		android:background="@color/grey_light" />
+
+	<RelativeLayout
+		android:id="@+id/ongkir"
+		android:layout_below="@+id/linearmenu"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:visibility="gone">
+
+		<ScrollView
+			android:id="@+id/ongkir_1"
+			android:layout_width="match_parent"
+			android:layout_height="250dp"
+			android:scrollbars="none">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:orientation="vertical"
+				android:paddingLeft="@dimen/activity_padding"
+				android:paddingRight="@dimen/activity_padding"
+				android:paddingBottom="@dimen/activity_padding"
+				android:paddingTop="@dimen/_5sdp" >
+
+				<TextView
+					android:layout_marginTop="@dimen/_8sdp"
+					android:layout_width="match_parent"
+					android:layout_marginLeft="@dimen/_3sdp"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:text="@string/hint_source"
+					android:textColor="@color/colorAccent"
+					android:textSize="@dimen/_10sdp" />
+
+				<EditText
+					android:id="@+id/edsource"
+					style="@style/editTextStyle" />
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginLeft="@dimen/_4sdp"
+					android:layout_marginRight="@dimen/_4sdp"
+					android:layout_marginTop="@dimen/_2sdp"
+					android:background="@color/dividerColor" />
+
+				<com.app.cekongkirkeyboard.lib.ExpandableHeightListView
+					android:id="@+id/lv_source"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="@dimen/_4sdp"
+					android:layout_marginRight="@dimen/_4sdp"
+					android:layout_marginBottom="@dimen/_2sdp"
+					android:divider="@null" />
+
+				<TextView
+					android:layout_marginTop="@dimen/_8sdp"
+					android:layout_width="match_parent"
+					android:layout_marginLeft="@dimen/_3sdp"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:text="@string/hint_destination"
+					android:textColor="@color/colorAccent"
+					android:textSize="@dimen/_10sdp" />
+
+				<EditText
+					android:id="@+id/eddestination"
+					style="@style/editTextStyle" />
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginLeft="@dimen/_4sdp"
+					android:layout_marginRight="@dimen/_4sdp"
+					android:layout_marginTop="@dimen/_2sdp"
+					android:background="@color/dividerColor" />
+
+				<com.app.cekongkirkeyboard.lib.ExpandableHeightListView
+					android:id="@+id/lv_dest"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="@dimen/_4sdp"
+					android:layout_marginRight="@dimen/_4sdp"
+					android:layout_marginBottom="@dimen/_2sdp"
+					android:divider="@null" />
+
+				<TextView
+					android:layout_marginTop="@dimen/_8sdp"
+					android:layout_width="match_parent"
+					android:layout_marginLeft="@dimen/_3sdp"
+					android:layout_height="wrap_content"
+					android:layout_gravity="center"
+					android:text="@string/hint_grams"
+					android:textColor="@color/colorAccent"
+					android:textSize="@dimen/_10sdp" />
+
+				<EditText
+					android:id="@+id/edweightgrams"
+					style="@style/editTextStyle"
+					android:text="1000" />
+
+				<View
+					android:layout_width="match_parent"
+					android:layout_height="1dp"
+					android:layout_marginBottom="@dimen/_2sdp"
+					android:layout_marginLeft="@dimen/_4sdp"
+					android:layout_marginRight="@dimen/_4sdp"
+					android:layout_marginTop="@dimen/_2sdp"
+					android:background="@color/dividerColor" />
+
+				<com.app.cekongkirkeyboard.lib.ExpandableHeightListView
+					android:id="@+id/listview"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:divider="@null" />
+
+			</LinearLayout>
+
+		</ScrollView>
+
+		<RelativeLayout
+			android:id="@+id/ongkir_2"
+			android:layout_below="@+id/ongkir_1"
+			android:layout_width="match_parent"
+			android:layout_height="@dimen/_35sdp"
+			android:padding="@dimen/_5sdp">
+
+			<ProgressBar
+				android:id="@+id/loading"
+				android:layout_width="@dimen/_25sdp"
+				android:layout_height="wrap_content"
+				android:layout_centerHorizontal="true"
+				android:indeterminate="true"
+				android:indeterminateDrawable="@drawable/progress_bg"
+				android:progress="0" />
+
+			<Button
+				android:id="@+id/btnback"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				style="@style/buttonStyle"
+				android:text="@string/txt_back" />
+
+			<Button
+				android:id="@+id/btnsubmit"
+				android:layout_marginLeft="@dimen/_5sdp"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_toRightOf="@+id/btnback"
+				style="@style/buttonStyle"
+				android:text="@string/txt_save" />
+
+
+		</RelativeLayout>
+
+	</RelativeLayout>
+
+
+
+	<com.app.cekongkirkeyboard.LatinKeyboardView
+		android:id="@+id/keyboard"
+		android:layout_below="@+id/ongkir"
+		android:paddingTop="0dp"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:keyPreviewLayout="@layout/preview"
+		android:keyBackground="@drawable/key_background"
+		android:keyTextColor="#fff"
+		android:background="@color/colorPrimaryDark"
+		android:popupLayout="@layout/keyboard_popup_layout" >
+
+	</com.app.cekongkirkeyboard.LatinKeyboardView>
+
+
+
+
+</RelativeLayout>
